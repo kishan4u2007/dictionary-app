@@ -6,7 +6,7 @@ import DictionaryApp from "./pages/DictionaryApp";
 function App() {
   return (
     <div className="App">
-<DictionaryApp />
+    <DictionaryApp />
     </div>
   );
 }
