@@ -1,124 +1,102 @@
-/* General Styling */
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-/* Container */
+/* General Container Styling */
 .dictionary-container {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   max-width: 600px;
-  width: 100%;
+  margin: auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Search Box */
-.search-box {
+.dictionary-container h2 {
+  padding: 10px 0px;
+}
+
+/* Search Box & Button */
+.search-container {
   display: flex;
-  align-items: center;
-  width: 100%;
-  border-radius: 8px;
-  background: white;
-  padding: 5px;
-  border: 1px solid #ddd;
-  transition: all 0.3s ease;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .search-box input {
-  flex: 1;
+  height: 24px;
   font-size: 16px;
-  padding: 12px;
-  border: none;
-  outline: none;
-  background: transparent;
-  border-radius: 8px;
+  border-radius: 6px;
+  padding: 10px;
+  flex: 1;
 }
 
-.search-box:focus-within {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Button */
-.search-box button {
-  background-color: #007bff;
+.search-container button {
+  background-color: #1e88e5;
   color: white;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 8px;
-  margin-left: 8px;
-  transition: background 0.3s ease;
-  cursor: pointer;
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
-.search-box button:hover {
-  background-color: #0056b3;
+.search-container button:hover {
+  background-color: #1565c0;
 }
 
 /* Loader */
 .loader {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin-top: 20px;
 }
 
 /* Error Message */
 .error-text {
-  color: red;
+  color: #d32f2f;
   text-align: center;
   font-weight: bold;
   margin-top: 10px;
 }
 
-/* Word Card */
+/* Definition Card */
 .definition-card {
-  background: white;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Word Title */
 .word-title {
   font-size: 24px;
   font-weight: bold;
-  text-transform: capitalize;
-  color: #222;
+  color: #333;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 /* Phonetics */
 .phonetics-text {
-  font-style: italic;
-  color: #555;
-  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
 }
 
+/* Audio Player */
 .audio-player {
   display: block;
-  margin: 10px auto;
+  margin-top: 10px;
 }
 
 /* Word Origin */
 .word-origin {
-  font-weight: bold;
   font-size: 14px;
-  color: #444;
+  font-style: italic;
+  color: #555;
   margin-top: 10px;
-  text-align: center;
 }
 
 /* Meanings List */
 .meanings-list {
   margin-top: 15px;
+  padding-left: 10px;
 }
 
 .meaning-item {
@@ -127,12 +105,13 @@ body {
 
 .part-of-speech {
   font-weight: bold;
-  font-size: 18px;
-  color: #007bff;
+  color: #1e88e5;
+  text-transform: capitalize;
 }
 
 .definition-text {
   font-size: 14px;
-  color: #333;
-  padding-left: 10px;
+  color: #444;
 }
+
+

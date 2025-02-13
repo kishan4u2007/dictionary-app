@@ -1,14 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 import DictionaryApp from "./pages/DictionaryApp";
 
-
-function App() {
-  return (
-    <div className="App">
-    <DictionaryApp />
-    </div>
-  );
-}
+const App = () => {
+  return <DictionaryApp />;
+};
 
 export default App;

@@ -5,10 +5,10 @@ const Phonetics = ({ phonetics }) => {
   return (
     <>
       {phonetics?.map((phonetic, index) => (
-        <div key={index}>
-          <Text italic>{phonetic.text}</Text>
-          {phonetic.audio && <audio controls src={phonetic.audio} />}
-        </div>
+        <Text key={index} italic className="phonetics-text">
+          {phonetic.text}
+          {phonetic.audio && <audio controls src={phonetic.audio} className="audio-player" />}
+        </Text>
       ))}
     </>
   );

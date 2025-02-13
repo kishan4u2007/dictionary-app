@@ -1,14 +1,20 @@
 import React from "react";
-import { TextInput, Button } from "@mantine/core";
+import { TextInput, Button, Group } from "@mantine/core";
 
-const SearchBox = ({ word, setWord, fetchDefinition }) => {
+const SearchBox = ({ word, setWord, fetchWordDefinition, loading }) => {
   return (
-    <TextInput
-      placeholder="Enter a word"
-      value={word}
-      onChange={(e) => setWord(e.target.value)}
-      rightSection={<Button onClick={fetchDefinition}>Search</Button>}
-    />
+    <Group position="center" className="search-container">
+      <TextInput
+        className="search-box"
+        placeholder="Enter a word"
+        value={word}
+        onChange={(event) => setWord(event.currentTarget.value)}
+        size="md"
+      />
+      <Button onClick={fetchWordDefinition} disabled={loading} size="md">
+        Search
+      </Button>
+    </Group>
   );
 };
 
