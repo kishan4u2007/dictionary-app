@@ -1,16 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import { MantineProvider } from "@mantine/core";
+import ReactDOM from "react-dom/client"; // ✅ Ensure this is correct
 import App from "./App";
-import reportWebVitals from './reportWebVitals';
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <MantineProvider withGlobalStyles withNormalizeCSS>
+  <React.StrictMode>
     <App />
-  </MantineProvider>
+  </React.StrictMode>
 );
-
-reportWebVitals();
-
