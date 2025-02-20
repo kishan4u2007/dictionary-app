@@ -1,6 +1,6 @@
 {
   "name": "dictionary-app",
-  "homepage": "",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,11 +17,10 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test"
-},
-
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
