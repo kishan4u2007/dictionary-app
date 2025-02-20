@@ -35,7 +35,7 @@ export default function FakePaymentScanner() {
 
   const sendSmsNotification = async () => {
     try {
-      await axios.post("http://localhost:5000/send-sms", { amount: amount });
+      await axios.post("https://dictionary-app-2.onrender.com/send-sms", { amount: amount }); // ✅ Updated backend URL
     } catch (error) {
       console.error("Error sending SMS:", error);
     }

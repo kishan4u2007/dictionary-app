@@ -2,6 +2,11 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
+const twilio = require("twilio");
+const client = new twilio(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -17,18 +22,21 @@ app.get("/", (req, res) => {
 // ✅ Fake SMS API (Modify as needed)
 app.post("/send-sms", async (req, res) => {
   try {
-    const { amount } = req.body;
-    console.log(`Sending SMS for amount: ₹${amount}`);
+    const { amount, phone } = req.body;
+    await client.messages.create({
+      body: `₹${amount} has been debited from your account.`,
+      from: process.env.TWILIO_PHONE_NUMBER,
+      to: phone, // User's phone number
+    });
 
-    // Simulating SMS response
-    res.status(200).json({ success: true, message: `SMS sent for ₹${amount}` });
+    res.status(200).json({ success: true, message: "SMS sent successfully!" });
   } catch (error) {
-    console.error("Error sending SMS:", error);
+    console.error("Twilio SMS Error:", error);
     res.status(500).json({ success: false, message: "Failed to send SMS" });
   }
 });
 
 // ✅ Start Server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`✅ Server is running at https://dictionary-app-2.onrender.com/`);
 });
