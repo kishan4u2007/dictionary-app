@@ -1,8 +1,8 @@
 import React from "react";
-import DictionaryApp from "./pages/DictionaryApp";
+import FakePaymentScanner from "./FakePaymentScanner";
 
-const App = () => {
-  return <DictionaryApp />;
-};
+function App() {
+  return <FakePaymentScanner />;
+}
 
 export default App;
